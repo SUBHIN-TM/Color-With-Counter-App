@@ -61,7 +61,7 @@ const Counter = () => {
   return (
     <>
       <div className='outLine m-auto'>
-        <div className={`innerLine colorChange ${getColorClass()}`}>
+        <div className={`innerLine colorChange ${getColorClass()} `}>
           <div className='valueBox m-auto mt-6 font-bold text-3xl rounded-lg bg-green'>{count}</div>
           {error && (<div className='mt-3 bg-white w-80 m-auto '> <h1 className='text-red-600'>Invalid Value</h1></div>)}
           <div className='flex justify-around mt-11'>
