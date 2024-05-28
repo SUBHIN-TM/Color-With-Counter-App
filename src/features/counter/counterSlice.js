@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   value: 0,
+  error:''
 }
 
 export const counterSlice = createSlice({
@@ -9,15 +10,39 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state,action) => {
-      state.value += action.payload
+      if(state.value == 30){
+       state.error +=" Value Out Of Limit "
+      }else{
+        state.value += action.payload
+        state.error =""
+      }
+      
     },
     decrement: (state) => {
-      state.value -= 1
+      if(state.value == 0){
+        state.error +=" Value Out Of Limit "
+      }else{
+        state.value -= 1
+        state.error =""
+      }
+     
     },
+    reset:(state)=>{
+      state.value=0
+      state.error =""
+    },
+    customValue:(state,action)=>{
+      if(action.payload >30 || action.payload< 0){
+        state.error +=" Value Out Of Limit "
+      }else{
+        state.error =""
+        state.value=action.payload
+      }
+     
+    }
   },
 })
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement} = counterSlice.actions
 
+export const { increment, decrement,reset,customValue} = counterSlice.actions
 export default counterSlice.reducer

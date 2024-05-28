@@ -5,3 +5,30 @@
   text-align: center;
 }
 
+.outLine{
+  height: 550px;
+  border: 4px solid black;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerLine{
+  width: 480px;
+  height: 530px;
+  border:  3px solid black;
+}
+
+.valueBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  width: 80px;
+  height: 50px;
+}
+
+.colorChange{
+  background-color:white;
+}
