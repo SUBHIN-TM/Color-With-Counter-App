@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement,increment,reset,customValue } from '../features/counter/counterSlice'
 import { useState } from 'react'
+import userColor from '../hooks/useColor';
 
 
 
@@ -14,49 +15,17 @@ const Counter=()=>{
   dispatch(customValue(Number(value)))
  }
 
-const colorMapping= {
-  1: 'bg-red-100',
-  2: 'bg-red-200',
-  3: 'bg-red-300',
-  4: 'bg-red-400',
-  5: 'bg-red-500',
-  6: 'bg-red-600',
-  7: 'bg-red-700',
-  8: 'bg-red-800',
-  9: 'bg-red-900',
-  10:'bg-red-950',
-  11:'bg-green-100',
-  12:'bg-green-200',
-  13:'bg-green-300',
-  14:'bg-green-400',
-  15:'bg-green-500',
-  16:'bg-green-600',
-  17:'bg-green-700',
-  18:'bg-green-800',
-  19:'bg-green-900',
-  20:'bg-green-950',
-  21:'bg-yellow-100',
-  22:'bg-yellow-200',
-  23:'bg-yellow-300',
-  24:'bg-yellow-400',
-  25:'bg-yellow-500',
-  26:'bg-yellow-600',
-  27:'bg-yellow-700',
-  28:'bg-yellow-800',
-  29:'bg-yellow-900',
-  30:'bg-yellow-950',
 
- }
 
  const getColorClass = () => {
  
 
   if (count >= 1 && count <= 10) {
-    return colorMapping[count]
+    return userColor(count,"red")
   } else if (count >= 11 && count <= 20) {
-    return colorMapping[count]
+    return userColor(count,"green")
   } else if (count >= 21 && count <= 30) {
-    return colorMapping[count]
+    return userColor(count,"yellow")
   }else{
     return ""
   }
