@@ -39,6 +39,12 @@ const Counter = () => {
         },
         'input *num': (num) => {
           dispatch(customValue(Number(num)))
+        },
+        'increment':()=>{
+          dispatch(increment(1))
+        },
+        'decrement':()=>{
+          dispatch(decrement())
         }
       }
 
@@ -63,7 +69,7 @@ const Counter = () => {
             <button onClick={() => dispatch(increment(1))} className='border p-2 bg-black  text-white font-semibold'>➕ Increment</button>
           </div>
           <div className='mt-10'>
-            <label className='font-semibold' htmlFor="value">Custom Value :</label>
+            <label className='font-semibold' htmlFor="value">Custom Value : </label>
             <input onChange={(e) => setValue(e.target.value)} value={value} className='border border-black w-40' type="number" name="" id="" />
           </div>
           <button onClick={applyCustomValue} className='border p-1 bg-black text-white font-semibold mt-2 ml-28 px-3'>Apply</button>
